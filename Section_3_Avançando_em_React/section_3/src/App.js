@@ -3,6 +3,7 @@ import RenderizacaoCondicional from './components/RenderizacaoCondicional';
 import IfElseNoJSX from './components/IfElseNoJSX';
 import ShowUserName from './components/ShowUserName';
 import { useState } from 'react';
+import CarDetails from './components/CarDetails';
 
 function App() {
   const [userName] = useState("Arthur Guilherme")
@@ -12,6 +13,7 @@ function App() {
       <RenderizacaoCondicional />
       <IfElseNoJSX />
       <ShowUserName name={userName}/>
+      <CarDetails brand="Volkswagem" color="Blue" km={200000}/>
     </div>
   );
 }
