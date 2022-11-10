@@ -8,6 +8,12 @@ import CarDetails from './components/CarDetails';
 function App() {
   const [userName] = useState("Arthur Guilherme")
 
+  const cars = [
+    {id: 1, brand: "Fiat", color: "Gray", km: 278000, newCar: false},
+    {id: 2, brand: "Ford", color: "Ice", km: 0, newCar: true},
+    {id: 3, brand: "Vokswagem", color: "Blue", km: 128000, newCar: false}
+  ];
+
   return (
     <div className="App">
       <RenderizacaoCondicional />
@@ -16,6 +22,13 @@ function App() {
       <CarDetails brand="Volkswagem" color="Blue" km={200000} newCar={false}/>
       <CarDetails brand="Ford" color="Red" km={0} newCar={true}/>
       <CarDetails brand="Fiat" color="Gray" km={260000} newCar={false}/>
+      {cars.map((car) => (
+        <CarDetails 
+          brand={car.brand} 
+          color={car.color} 
+          km={car.km} 
+          newCar={car.newCar}/>
+      ))}
     </div>
   );
 }
