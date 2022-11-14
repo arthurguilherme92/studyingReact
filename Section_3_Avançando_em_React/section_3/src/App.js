@@ -4,6 +4,7 @@ import IfElseNoJSX from './components/IfElseNoJSX';
 import ShowUserName from './components/ShowUserName';
 import { useState } from 'react';
 import CarDetails from './components/CarDetails';
+import Fragments from './components/Fragments';
 
 function App() {
   const [userName] = useState("Arthur Guilherme")
@@ -29,6 +30,8 @@ function App() {
           km={car.km} 
           newCar={car.newCar}/>
       ))}
+      {/*Fragments */}
+      <Fragments />
     </div>
   );
 }
