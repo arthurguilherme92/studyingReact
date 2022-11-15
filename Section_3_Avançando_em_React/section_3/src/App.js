@@ -5,6 +5,7 @@ import ShowUserName from './components/ShowUserName';
 import { useState } from 'react';
 import CarDetails from './components/CarDetails';
 import Fragments from './components/Fragments';
+import Container from './components/Container';
 
 function App() {
   const [userName] = useState("Arthur Guilherme")
@@ -32,6 +33,13 @@ function App() {
       ))}
       {/*Fragments */}
       <Fragments />
+      {/*Children */}
+      <Container>
+        <p>Este é o conteúdo do Container!</p>
+      </Container>
+      <Container MyValue="teste1">
+        <h3>Teste 2</h3>
+      </Container>
     </div>
   );
 }
