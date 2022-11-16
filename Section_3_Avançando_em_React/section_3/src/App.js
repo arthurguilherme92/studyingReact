@@ -6,6 +6,7 @@ import { useState } from 'react';
 import CarDetails from './components/CarDetails';
 import Fragments from './components/Fragments';
 import Container from './components/Container';
+import ExecuteFunction from './components/ExecuteFunction';
 
 function App() {
   const [userName] = useState("Arthur Guilherme")
@@ -15,6 +16,10 @@ function App() {
     {id: 2, brand: "Ford", color: "Ice", km: 0, newCar: true},
     {id: 3, brand: "Vokswagem", color: "Blue", km: 128000, newCar: false}
   ];
+
+  function showMessage() {
+    console.log("Evento do componente Pai");
+  }
 
   return (
     <div className="App">
@@ -26,6 +31,7 @@ function App() {
       <CarDetails brand="Fiat" color="Gray" km={260000} newCar={false}/>
       {cars.map((car) => (
         <CarDetails 
+          key={car.id}
           brand={car.brand} 
           color={car.color} 
           km={car.km} 
@@ -40,6 +46,8 @@ function App() {
       <Container MyValue="teste1">
         <h3>Teste 2</h3>
       </Container>
+      {/*Executar função em Prop*/}
+      <ExecuteFunction myFunction={showMessage}/>
     </div>
   );
 }
