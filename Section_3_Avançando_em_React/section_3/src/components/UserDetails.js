@@ -1,18 +1,12 @@
 import React from 'react'
-import { useState } from 'react'
 
-const Challenge = () => {
-
-  const [testList] = useState(["Arthur", "Junior", "Nathan"]);
+const Challenge = ({nome, year}) => {
 
   return (
     <div>
-        <h1>Challenge - Section 3</h1>
-        <ul>
-          {testList.map((nome) => (
-            <li>{nome}</li>
-          ))}
-        </ul>
+      <h2>{nome}</h2>
+      <p>{year}</p>
+        {year >=18 ? (<p>pode tirar carteira de Habilitação!</p>) : (<p>menor de idade</p>)}
     </div>
   )
 }

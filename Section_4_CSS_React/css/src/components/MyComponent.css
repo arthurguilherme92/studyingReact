@@ -1,0 +1,13 @@
+h2 {
+    color: blue;
+}
+
+p {
+    color: green;
+    background-color: white;
+}
+
+.paragrafo-do-componente {
+    color: white;
+    background-color: goldenrod;
+}

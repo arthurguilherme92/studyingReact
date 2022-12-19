@@ -24,7 +24,7 @@ const cars = [
   {id: 1, brand: "Fiat", km: 230.000, cor:"preto", newCar: false},
   {id: 2, brand: "Renault", km: 0, cor:"preto", newCar: true},
   {id: 3, brand: "Wolksvagem", km: 0, cor:"preto", newCar: true},
-  {id: 4, brand: "Chevrolet", km: 280.000, cor:"preto", newCar: false},
+  {id: 4, brand: "Chevrolet", km: 280.000, cor:"preto", newCar: false}
 ]
 
 const showMessage = () => {
@@ -36,6 +36,13 @@ const [message, setMessage] = useState("");
 const handleMessage = (msg) => {
   setMessage(msg)
 }
+
+const people = [
+  {id: 1, nome: "Arthur", year: 30},
+  {id: 2, nome: "Alexander Jr", year: 25},
+  {id: 3, nome: "Nathan", year: 0},
+  {id: 4, nome: "Isabely", year: 10}
+]
   
   return (
     <div className="App">
@@ -72,7 +79,14 @@ const handleMessage = (msg) => {
       <Message msg={message} />
       <ChangeMessageState handleMessage={handleMessage}/>
       {/*Challenge*/}
-      <UserDetails />
+      {people.map((user) => (
+        <UserDetails
+        key={user.id}
+        nome={user.nome}
+        year={user.year}
+        />
+      ))}
+      
     </div>
   );
 }
